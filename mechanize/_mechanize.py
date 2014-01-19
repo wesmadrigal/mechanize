@@ -672,7 +672,9 @@ class Browser(UserAgentBase):
 
     """
     Author : Wes Madrigal
-    Date : 01/18/14
+    Email : wesley7879@gmail.com
+    Github : https://github.com/wesmadrigal
+    Date : 01-18-14
     # sets a Browser instance user agent
     # defaults to firefox on a linux machine
     # can pass kwarg to the name such as:
@@ -702,3 +704,21 @@ class Browser(UserAgentBase):
             print "Defaulting to Firefox"        
             self.addheaders = [ ('User-Agent', 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9a3pre) Gecko/20070330') ]
 
+
+    """
+    Author : Wes Madrigal
+    Email : wesley7879@gmail.com
+    Github : https://github.com/wesmadrigal
+    Date : 01-18-14
+    A pre-strapped Browser instance with all my personal favorite fixtures
+    Motivation:
+    Every time I'm using a mechanize.Browser instance I strap it with these fixtures
+    Most of the time this is a manual thing, although I've written scripts to do this for me in the past
+    """
+
+    def bootstrap(self, agent=None):
+        self.set_handle_equiv(True)
+        self.set_handle_gzip(True)
+        self.set_debug_http(True)
+        self.set_handle_robots(False)
+        self.set_user_agent() 
