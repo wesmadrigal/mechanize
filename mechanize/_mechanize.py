@@ -667,3 +667,38 @@ class Browser(UserAgentBase):
                 continue
             yield link
             nr = orig_nr
+
+
+
+    """
+    Author : Wes Madrigal
+    Date : 01/18/14
+    # sets a Browser instance user agent
+    # defaults to firefox on a linux machine
+    # can pass kwarg to the name such as:
+    # chrome, ie (internet explorer), firefox
+   
+    """
+
+    def set_user_agent(self, name=None):
+        if not name:
+            self.addheaders = [ ('User-Agent', 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9a3pre) Gecko/20070330') ]
+
+        elif name == 'ie':
+            self.addheaders = [ ('User-Agent', 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)') ]
+
+        elif name == 'chrome':
+            self.addheaders = [ ('User-Agent', 'Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1667.0 Safari/537.36') ]
+
+        elif name == 'firefox':
+            #self.set_user_agent()
+            self.addheaders = [ ('User-Agent', 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9a3pre) Gecko/20070330') ]
+
+        elif name == 'safari':
+            self.addheaders = [ ('User-Agent', 'Mozilla/5.0 (iPad; CPU OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5355d Safari/8536.25') ]
+
+        else:
+            print "Error: No such browser %s" % name
+            print "Defaulting to Firefox"        
+            self.addheaders = [ ('User-Agent', 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9a3pre) Gecko/20070330') ]
+
