@@ -698,6 +698,9 @@ class Browser(UserAgentBase):
 
         elif name == 'safari':
             self.addheaders = [ ('User-Agent', 'Mozilla/5.0 (iPad; CPU OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5355d Safari/8536.25') ]
+    
+        elif name == 'iphone':
+            self.addheaders = [ ('User-Agent', 'Mozilla/5.0 (iPhone; CPU iPhone OS 7_0_3 like Mac OS X) AppleWebKit/537.51.1 (KHTML, like Gecko) Mobile/11B511') ]
 
         else:
             print "Error: No such browser %s" % name
