@@ -670,19 +670,20 @@ class Browser(UserAgentBase):
 
 
 
-    """
-    Author : Wes Madrigal
-    Email : wesley7879@gmail.com
-    Github : https://github.com/wesmadrigal
-    Date : 01-18-14
-    # sets a Browser instance user agent
-    # defaults to firefox on a linux machine
-    # can pass kwarg to the name such as:
-    # chrome, ie (internet explorer), firefox
-   
-    """
 
     def set_user_agent(self, name=None):
+        """
+        Author : Wes Madrigal
+        Email : wesley7879@gmail.com
+        Github : https://github.com/wesmadrigal
+        Date : 01-18-14
+
+         sets a Browser instance user agent
+         defaults to firefox on a linux machine
+         can pass kwarg to the name such as:
+         chrome, ie (internet explorer), firefox
+   
+        """
         if not name:
             self.addheaders = [ ('User-Agent', 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9a3pre) Gecko/20070330') ]
 
@@ -708,18 +709,18 @@ class Browser(UserAgentBase):
             self.addheaders = [ ('User-Agent', 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9a3pre) Gecko/20070330') ]
 
 
-    """
-    Author : Wes Madrigal
-    Email : wesley7879@gmail.com
-    Github : https://github.com/wesmadrigal
-    Date : 01-18-14
-    A pre-strapped Browser instance with all my personal favorite fixtures
-    Motivation:
-    Every time I'm using a mechanize.Browser instance I strap it with these fixtures
-    Most of the time this is a manual thing, although I've written scripts to do this for me in the past
-    """
 
     def bootstrap(self, agent=None):
+        """
+        Author : Wes Madrigal
+        Email : wesley7879@gmail.com
+        Github : https://github.com/wesmadrigal
+        Date : 01-18-14
+         A pre-strapped Browser instance with all my personal favorite fixtures
+         Motivation:
+         Every time I'm using a mechanize.Browser instance I strap it with these fixtures
+         Most of the time this is a manual thing, although I've written scripts to do this for me in the past
+        """
         self.set_handle_equiv(True)
         self.set_handle_gzip(True)
         self.set_debug_http(True)
