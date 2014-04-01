@@ -209,3 +209,13 @@ logger = logging.getLogger("mechanize")
 if logger.level is logging.NOTSET:
     logger.setLevel(logging.CRITICAL)
 del logger
+
+import os
+try:
+    import bs4
+except ImportError:
+    contin = raw_input("This fork of mechanize requires beautifulsoup4 and you don't appear to have it.\nWould you like to proceed? (yes or no): ")
+    if contin == "yes":
+        os.system("sudo pip install beautifulsoup4")
+    else:
+        pass
